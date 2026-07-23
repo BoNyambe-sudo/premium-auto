@@ -61,8 +61,3 @@ body {
   background-color: rgba(59, 130, 246, 0.3);
   color: white;
 }
-
-.select-wrapper:focus-within .select-chevron,
-.select-wrapper.is-open .select-chevron {
-  transform: translateY(-50%) rotate(180deg);
-}

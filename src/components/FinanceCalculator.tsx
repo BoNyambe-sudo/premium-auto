@@ -1,15 +1,15 @@
 import { useState, useMemo } from "react";
 
-const formatCurrency = (value) =>
+const formatCurrency = (value: number) =>
   new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "USD",
+    currency: "ZMW",
     maximumFractionDigits: 0,
   }).format(value);
 
 export default function FinanceCalculator() {
-  const [price, setPrice] = useState(35000);
-  const [downPayment, setDownPayment] = useState(5000);
+  const [price, setPrice] = useState(800000);
+  const [downPayment, setDownPayment] = useState(100000);
   const [rate, setRate] = useState(6.5);
   const [months, setMonths] = useState(60);
 
@@ -54,19 +54,19 @@ export default function FinanceCalculator() {
                 <input
                   id="price"
                   type="range"
-                  min="10000"
-                  max="80000"
-                  step="500"
+                  min="200000"
+                  max="1200000"
+                  step="10000"
                   value={price}
                   onChange={(e) => setPrice(Number(e.target.value))}
                   className="w-full accent-primary"
-                  aria-valuemin={10000}
-                  aria-valuemax={80000}
+                  aria-valuemin={200000}
+                  aria-valuemax={1200000}
                   aria-valuenow={price}
                 />
                 <div className="flex justify-between text-xs text-muted-foreground mt-1">
-                  <span>$10k</span>
-                  <span>$80k</span>
+                  <span>K200k</span>
+                  <span>K1.2m</span>
                 </div>
               </div>
 
@@ -81,18 +81,18 @@ export default function FinanceCalculator() {
                   id="downPayment"
                   type="range"
                   min="0"
-                  max="20000"
-                  step="500"
+                  max="400000"
+                  step="5000"
                   value={downPayment}
                   onChange={(e) => setDownPayment(Number(e.target.value))}
                   className="w-full accent-primary"
                   aria-valuemin={0}
-                  aria-valuemax={20000}
+                  aria-valuemax={400000}
                   aria-valuenow={downPayment}
                 />
                 <div className="flex justify-between text-xs text-muted-foreground mt-1">
-                  <span>$0</span>
-                  <span>$20k</span>
+                  <span>K0</span>
+                  <span>K400k</span>
                 </div>
               </div>
 
@@ -123,7 +123,7 @@ export default function FinanceCalculator() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-3">
+                <label className="block text-sm font-medium text-muted-foreground mb-3">
                   Loan Term
                 </label>
                 <div className="grid grid-cols-4 gap-2">
@@ -132,11 +132,11 @@ export default function FinanceCalculator() {
                       key={term}
                       type="button"
                       onClick={() => setMonths(term)}
-                  className={`rounded-lg py-2.5 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-ring ${
-                    months === term
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-accent text-muted-foreground hover:bg-accent/80"
-                  }`}
+                      className={`rounded-lg py-2.5 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-ring ${
+                        months === term
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-accent text-muted-foreground hover:bg-accent/80"
+                      }`}
                     >
                       {term / 12}yr
                     </button>

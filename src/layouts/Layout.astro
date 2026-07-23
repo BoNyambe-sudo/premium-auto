@@ -1,23 +1,306 @@
+---
+import '../styles/global.css';
+const title = 'Premier Auto Sales | New & Used Cars | Best Prices';
+const description = 'Shop premium new and used vehicles with transparent pricing, certified inspections, and zero-haggle pricing. Finance online, schedule a test drive today.';
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+
+const organization = {
+  '@type': 'AutoDealer',
+  '@id': `${Astro.site}/#organization`,
+  name: 'Premier Auto Sales',
+  url: Astro.site,
+  telephone: '(555) 123-4567',
+  email: 'info@premierautosales.example.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '1234 Auto Plaza Drive',
+    addressLocality: 'Los Angeles',
+    addressRegion: 'CA',
+    postalCode: '90001',
+    addressCountry: 'US'
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 34.0522,
+    longitude: -118.2437
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '20:00'
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Saturday'],
+      opens: '09:00',
+      closes: '18:00'
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Sunday'],
+      opens: '11:00',
+      closes: '17:00'
+    }
+  ],
+  priceRange: '$$',
+  sameAs: [
+    'https://www.facebook.com/example-premier-auto',
+    'https://twitter.com/example-premier-auto'
+  ]
+};
+
+const website = {
+  '@type': 'WebSite',
+  '@id': `${Astro.site}/#website`,
+  url: Astro.site,
+  name: 'Premier Auto Sales',
+  publisher: {
+    '@id': `${Astro.site}/#organization`
+  },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${Astro.site}/search?q={search_term_string}`,
+    'query-input': 'required name=search_term_string'
+  }
+};
+
+const webPage = {
+  '@type': 'WebPage',
+  '@id': `${Astro.site}${Astro.url.pathname}/#webpage`,
+  url: canonical,
+  name: title,
+  description,
+  isPartOf: {
+    '@id': `${Astro.site}/#website`
+  },
+  inLanguage: 'en-US'
+};
+
+const breadcrumbList = {
+  '@type': 'BreadcrumbList',
+  '@id': `${Astro.site}${Astro.url.pathname}/#breadcrumb`,
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${Astro.site}/` }
+  ]
+};
+
+const products = [
+  {
+    '@type': 'Product',
+    name: '2024 Toyota Camry XSE',
+    description: 'Certified pre-owned Camry XSE with Toyota Safety Sense 3.0 and premium JBL audio.',
+    brand: { '@type': 'Brand', name: 'Toyota' },
+    offers: {
+      '@type': 'Offer',
+      price: '32995',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: `${Astro.site}/inventory/2024-toyota-camry-xse`
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      bestRating: '5',
+      reviewCount: '24'
+    }
+  },
+  {
+    '@type': 'Product',
+    name: '2023 Honda CR-V Hybrid Sport',
+    description: 'Efficient CR-V Hybrid with Honda Sensing and premium Bose audio system.',
+    brand: { '@type': 'Brand', name: 'Honda' },
+    offers: {
+      '@type': 'Offer',
+      price: '35950',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: `${Astro.site}/inventory/2023-honda-cr-v-hybrid`
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.7',
+      bestRating: '5',
+      reviewCount: '31'
+    }
+  },
+  {
+    '@type': 'Product',
+    name: '2024 Ford F-150 XLT',
+    description: 'Powerful F-150 XLT with Pro Power Onboard and B&O Sound by Bang & Olufsen.',
+    brand: { '@type': 'Brand', name: 'Ford' },
+    offers: {
+      '@type': 'Offer',
+      price: '53495',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: `${Astro.site}/inventory/2024-ford-f-150-xlt`
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      bestRating: '5',
+      reviewCount: '18'
+    }
+  },
+  {
+    '@type': 'Product',
+    name: '2022 BMW 330i xDrive',
+    description: 'Sport-tuned 330i xDrive with M Sport package and Harman Kardon premium audio.',
+    brand: { '@type': 'Brand', name: 'BMW' },
+    offers: {
+      '@type': 'Offer',
+      price: '44800',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/LimitedAvailability',
+      url: `${Astro.site}/inventory/2022-bmw-330i-xdrive`
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.6',
+      bestRating: '5',
+      reviewCount: '12'
+    }
+  },
+  {
+    '@type': 'Product',
+    name: '2023 Mazda CX-5 Signature',
+    description: 'Luxurious CX-5 Signature with Bose Centerpoint surround and Soul Red Crystal paint.',
+    brand: { '@type': 'Brand', name: 'Mazda' },
+    offers: {
+      '@type': 'Offer',
+      price: '37400',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: `${Astro.site}/inventory/2023-mazda-cx-5-signature`
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      bestRating: '5',
+      reviewCount: '22'
+    }
+  },
+  {
+    '@type': 'Product',
+    name: '2024 Hyundai Sonata Limited',
+    description: 'Near-new Sonata Limited with Nappa leather and advanced Starlink safety suite.',
+    brand: { '@type': 'Brand', name: 'Hyundai' },
+    offers: {
+      '@type': 'Offer',
+      price: '31695',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: `${Astro.site}/inventory/2024-hyundai-sonata-limited`
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.7',
+      bestRating: '5',
+      reviewCount: '16'
+    }
+  }
+];
+
+const faqPage = {
+  '@type': 'FAQPage',
+  '@id': `${Astro.site}${Astro.url.pathname}/#faq`,
+  mainEntity: [
+    { '@type': 'Question', name: 'How does financing work?', acceptedAnswer: { '@type': 'Answer', text: 'We partner with 20+ top lenders to get you pre-approved in minutes. Our finance team reviews your budget and finds the best rates available—often better than going direct to the bank. Apply online or visit the dealership.' } },
+    { '@type': 'Question', name: 'What is your trade-in process?', acceptedAnswer: { '@type': 'Answer', text: 'Get a fair market value estimate instantly through our online appraisal tool. We evaluate your vehicle using current market data and make a transparent offer on the spot—no negotiations, no pressure.' } },
+    { '@type': 'Question', name: 'Can I test drive a vehicle?', acceptedAnswer: { '@type': 'Answer', text: 'Absolutely. Schedule a test drive online or by phone. We offer flexible same-day and next-day slots, including evenings and weekends for your convenience.' } },
+    { '@type': 'Question', name: 'Are vehicles certified inspected?', acceptedAnswer: { '@type': 'Answer', text: 'Every vehicle undergoes a comprehensive 150-point inspection covering brakes, tires, engine, transmission, electronics, and safety systems. We provide a full inspection report you can review before purchase.' } },
+    { '@type': 'Question', name: 'Do you offer warranties?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. All certified pre-owned vehicles include a warranty up to 7 years/100,000 miles. Extended warranty options are available for most models at competitive rates.' } },
+    { '@type': 'Question', name: 'Can I get a vehicle delivered?', acceptedAnswer: { '@type': 'Answer', text: 'We offer home delivery within a 50-mile radius at no cost. For farther locations, we partner with trusted auto transporters and coordinate the entire process for you.' } }
+  ]
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    organization,
+    website,
+    webPage,
+    breadcrumbList,
+    faqPage,
+    ...products
+  ]
+};
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonical} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={`${Astro.site}/og-image.png`} />
+    <meta property="og:site_name" content="Premier Auto Sales" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${Astro.site}/og-image.png`} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <slot name="head" />
+  </head>
+  <body class="bg-background text-foreground font-sans antialiased">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-3 focus:bg-foreground focus:text-background focus:rounded-lg focus-visible:ring-2 focus-visible:ring-ring">
+      Skip to content
+    </a>
+
+    <header>
+      <slot name="header" />
+    </header>
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <footer>
+      <slot name="footer" />
+    </footer>
+
+    <style is:global>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+      :focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 2px var(--color-ring);
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--color-background);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+    </style>
+
+    <slot name="scripts" />
+  </body>
+</html>

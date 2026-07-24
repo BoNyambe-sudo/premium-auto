@@ -1,7 +1,8 @@
 {
-  "name": "",
+  "name": "Car Dealership Homepage",
   "type": "module",
   "version": "0.0.1",
+  "homepage" : "https://bonyambe-sudo.github.io/premium-auto/",
   "engines": {
     "node": ">=22.12.0"
   },

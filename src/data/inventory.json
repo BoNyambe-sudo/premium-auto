@@ -11,7 +11,8 @@
     "color": "Pearl White",
     "bodyType": "Sedan",
     "features": ["Apple CarPlay", "Toyota Safety Sense 3.0", "Wireless Charging", "JBL Audio"],
-    "description": "Certified pre-owned Camry XSE with Toyota Safety Sense and premium JBL audio."
+    "description": "Certified pre-owned Camry XSE with Toyota Safety Sense and premium JBL audio.",
+    "image": "image-1.webp"
   },
   {
     "id": 2,
@@ -25,7 +26,8 @@
     "color": "Crystal Black Pearl",
     "bodyType": "SUV",
     "features": ["Honda Sensing", "Bose Premium Audio", "Hands-Free Access", "Wireless Apple CarPlay"],
-    "description": "Efficient CR-V Hybrid with Honda Sensing suite and premium Bose audio system."
+    "description": "Efficient CR-V Hybrid with Honda Sensing suite and premium Bose audio system.",
+    "image": "image-2.webp"
   },
   {
     "id": 3,
@@ -39,7 +41,8 @@
     "color": "Iconic Silver Metallic",
     "bodyType": "Truck",
     "features": ["Co-Pilot360", "Pro Power Onboard", "Trailer Hitch Receiver", "B&O Sound"],
-    "description": "Powerful F-150 XLT with Pro Power Onboard and premium B&O sound by Bang & Olufsen."
+    "description": "Powerful F-150 XLT with Pro Power Onboard and premium B&O sound by Bang & Olufsen.",
+    "image": "image-3.webp"
   },
   {
     "id": 4,
@@ -53,7 +56,8 @@
     "color": "Alpine White",
     "bodyType": "Sedan",
     "features": ["Navigation", "M Sport Package", "Harman Kardon", "Head-Up Display"],
-    "description": "Sport-tuned 330i xDrive with M Sport package and premium Harman Kardon audio."
+    "description": "Sport-tuned 330i xDrive with M Sport package and premium Harman Kardon audio.",
+    "image": "image-4.webp"
   },
   {
     "id": 5,
@@ -67,7 +71,8 @@
     "color": "Soul Red Crystal",
     "bodyType": "SUV",
     "features": ["Bose Centerpoint", "Mazda Connect", "Head-Up Display", "360° Camera"],
-    "description": "Luxurious CX-5 Signature with Bose Centerpoint surround and striking Soul Red Crystal paint."
+    "description": "Luxurious CX-5 Signature with Bose Centerpoint surround and striking Soul Red Crystal paint.",
+    "image": "image-5.webp"
   },
   {
     "id": 6,
@@ -81,6 +86,7 @@
     "color": "Titan Gray",
     "bodyType": "Sedan",
     "features": ["Bluelink Connected", "Nappa Leather", "12.3\" Infotainment", "Starlink Safety"],
-    "description": "Near-new Sonata Limited with Nappa leather seats and advanced Starlink safety suite."
+    "description": "Near-new Sonata Limited with Nappa leather seats and advanced Starlink safety suite.",
+    "image": "image-6.webp"
   }
 ]

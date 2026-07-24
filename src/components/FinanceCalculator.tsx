@@ -65,7 +65,7 @@ export default function FinanceCalculator() {
                   aria-valuenow={price}
                 />
                 <div className="flex justify-between text-xs text-muted-foreground mt-1">
-                  <span>K200k</span>
+                  <span>K200,000</span>
                   <span>K1.2m</span>
                 </div>
               </div>
@@ -92,7 +92,7 @@ export default function FinanceCalculator() {
                 />
                 <div className="flex justify-between text-xs text-muted-foreground mt-1">
                   <span>K0</span>
-                  <span>K400k</span>
+                  <span>K400,000</span>
                 </div>
               </div>
 
@@ -149,7 +149,7 @@ export default function FinanceCalculator() {
               <p className="text-sm font-medium text-muted-foreground mb-2">
                 Estimated Monthly Payment
               </p>
-              <p className="text-5xl font-bold text-foreground" aria-live="polite">
+              <p className="text-2xl md:text-5xl font-bold text-foreground" aria-live="polite">
                 {formatCurrency(monthlyPayment)}
               </p>
               <div className="mt-6 space-y-3">
